@@ -14,18 +14,10 @@
             <th tuiTh>Balance</th>
         </tr>
     </thead>
-    <tbody
-        tuiTbody
-        [data]="data"
-    >
-        <tr
-            *tuiRow="let item of data"
-            tuiTr
-        >
-            <td
-                *tuiCell="'balance'"
-                tuiTd
-            >
+    <tbody tuiTbody>
+        <tr *ngFor="let item of data | tuiTableSort">
+            <td tuiTd>{{ item.name }}</td>
+            <td tuiTd>
                 {{ item.balance | tuiFormatNumber }}
             </td>
         </tr>
